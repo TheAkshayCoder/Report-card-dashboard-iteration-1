@@ -39,7 +39,7 @@ for (i = 0; i < data.length; i++) {
   var rowBlock = document.createElement("div");
   rowBlock.classList.add("row");
   rowBlock.innerHTML = `<div class="col">
-    ${data[i].id}
+    ${i}
   </div>
   <div class="col">
   ${data[i].name}
