@@ -45,7 +45,7 @@ for (i = 0; i < data.length; i++) {
   ${data[i].name}
   </div>
   <div class="col">
-  <a href=" https://theakshaycoder.github.io/attendence-form/?id=${data[i].id}" target="_blank">URL</a>
+  <a href="https://theakshaycoder.github.io/attendence-form/?id=${data[i].id}ok" target="_blank">URL</a>
   </div>`;
   table.appendChild(rowBlock);
 }
