@@ -33,26 +33,45 @@ var data = [
   },
 ];
 
+
+
+const APIURL="https://besingularlms.herokuapp.com/getusers"
+
+async function studentList(){
+    const response=await fetch(APIURL)
+    const data = await response.json()
+    const users = data.users
+    console.log(users[0])
+
+
+
 const table = document.getElementById("table1");
 console.log(table);
-for (i = 0; i < data.length; i++) {
+for (i = 0; i < users.length; i++) {
   var rowBlock = document.createElement("div");
   rowBlock.classList.add("row");
   rowBlock.classList.add("innerRow");
-  rowBlock.innerHTML = `<div class="col">
-    ${i + 1}
+  rowBlock.innerHTML = `
+  <div class="col">
+  ${i+1}
   </div>
   <div class="col">
-  ${data[i].name}
+  ${users[i].lms_id}
+  </div>
+  <div class="col">
+  ${users[i].first_name}  ${users[i].last_name} 
   </div>
   <div class="col">
   <a href="https://theakshaycoder.github.io/attendence-form/?id=${
-    data[i].id
+    users[i].lms_id
   }ok" target="_blank">URL</a>
   </div>`;
   table.appendChild(rowBlock);
 }
 
+
+}
+studentList()
 const searchByName = document.getElementById("searchByName");
 
 function find() {
