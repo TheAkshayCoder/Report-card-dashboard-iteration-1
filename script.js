@@ -48,7 +48,10 @@ async function studentList(){
     
 const table = document.getElementById("table1");
 console.log(table);
-for (i = 0; i < users.length; i++) {
+
+for (i = 0; i < users.length; i++) 
+{
+  if(users[i].status=="active"){
   totalUsers++
   var rowBlock = document.createElement("div");
   rowBlock.classList.add("row");
@@ -69,6 +72,7 @@ for (i = 0; i < users.length; i++) {
   }ok" target="_blank">URL</a>
   </div>`;
   table.appendChild(rowBlock);
+}
 }
 
 
