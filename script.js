@@ -48,17 +48,17 @@ async function studentList(){
     
 const table = document.getElementById("table1");
 console.log(table);
-
+var j=0;
 for (i = 0; i < users.length; i++) 
 {
-  if(users[i].status=="active"){
+  if(users[i].status=="active"){  
   totalUsers++
   var rowBlock = document.createElement("div");
   rowBlock.classList.add("row");
   rowBlock.classList.add("innerRow");
   rowBlock.innerHTML = `
   <div class="col">
-  ${i+1}
+  ${j+1}
   </div>
   <div class="col">
   ${users[i].lms_id}
@@ -71,6 +71,7 @@ for (i = 0; i < users.length; i++)
     users[i].lms_id
   }ok" target="_blank">URL</a>
   </div>`;
+  j++
   table.appendChild(rowBlock);
 }
 }
