@@ -38,6 +38,9 @@ const APIURL="https://besingularauto.herokuapp.com/getusers"
 
 async function studentList(){
     const response=await fetch(APIURL)
+    if(response){
+      document.getElementById('loader').style.display='none'
+    }
     const data = await response.json()
     const users = data.users
     console.log(users[0])
